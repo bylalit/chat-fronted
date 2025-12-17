@@ -1,0 +1,100 @@
+<div class="xyz">
+  <div class="container py-4">
+    <div class="row chat-container">
+
+      <!-- Sidebar -->
+      <div class="col-md-3 sidebar">
+        <h5 class="mb-3">
+          <i class="bi bi-chat-dots-fill fs-2 me-2"></i>QuickChat
+
+          <div class="menu-icon">
+            <i class="bi bi-three-dots-vertical menu-icon"></i>
+            <div class="menu-dropdown">
+              <a routerLink="/profile">Edit Profile</a>
+              <button (click)="logout()">Logout</button>
+            </div>
+          </div>
+        </h5>
+
+        <div class="search-box mb-3">
+          <i class="bi bi-search"></i>
+          <input type="text" class="form-control" placeholder="Search User...">
+        </div>
+
+        <div class="user-list">
+          @for (user of users; track $index) {
+            <div class="user">
+              <a routerLink="/chatPage/{{ user._id }}" class="text-white text-decoration-none d-flex">
+                <img [src]="user?.image || 'chat-app-assets/img1.jpg'" alt="">
+                <div>
+                  <div class="fw-bold">{{ user.name }}</div>
+                  <!-- <small class="status-offline">Offline</small> -->
+                </div>
+              </a>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Chat Box -->
+      <div class="col-md-6 chat-box">
+
+        <div class="chat-header">
+          <img [src]="selectedUser?.image || 'chat-app-assets/img1.jpg'" alt="">
+          <strong>{{ selectedUser?.name || 'Select User' }}</strong>
+          <!-- <h3>{{selectedUser?.image}}</h3> -->
+        </div>
+
+        <!-- MESSAGES AREA -->
+        <div class="messages-container" #messagesContainer>
+
+          @for (m of messages; track $index) {
+            <div class="chat-message"
+               [ngClass]="m.senderId == senderId ? 'sent' : 'received'">
+              {{ m.message }}
+            </div>
+          }
+
+        </div>
+
+        <!-- INPUT AREA -->
+        <div class="input-area">
+          <input type="text"
+                 [(ngModel)]="messageText"
+                 class="form-control message-input"
+                 placeholder="Type a message...">
+
+          <button class="send-btn" (click)="sendMessage()">
+            <i class="bi bi-send"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- User Info -->
+      <div class="col-md-3 user-info">
+        <div class="text-center">
+          <img [src]="user?.image || 'chat-app-assets/img1.jpg'" class="rounded-circle mt-3 mb-2" alt="">
+          <h5>{{ user?.name }}</h5>
+          <p>{{ user?.bio }}</p>
+
+          <hr class="border-light">
+          <!-- <h6>Media</h6>
+
+          <div class="d-flex flex-wrap justify-content-center gap-2">
+            <img src="chat-app-assets/pic1.png" class="rounded" alt="">
+            <img src="chat-app-assets/pic2.png" class="rounded" alt="">
+            <img src="chat-app-assets/pic3.png" class="rounded" alt="">
+            <img src="chat-app-assets/pic4.png" class="rounded" alt="">
+            <img src="chat-app-assets/pic1.png" class="rounded" alt="">
+            <img src="chat-app-assets/pic2.png" class="rounded" alt="">
+            <img src="chat-app-assets/pic3.png" class="rounded" alt="">
+            <img src="chat-app-assets/pic4.png" class="rounded" alt="">
+          </div>
+        </div> -->
+        </div>
+
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,59 @@
+<div class="abc">
+  <div class="background-blur"></div>
+
+  <div class="container-fluid">
+    <div class="main-content">
+      <div class="logo-section">
+        <div class="chat-icon">
+          <div class="chat-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+        <div class="logo-text">QuickChat</div>
+      </div>
+
+
+      <div class="signup-section" *ngIf="isSignup; else loginForm">
+        <h2 class="signup-title">Sign up</h2>
+        <form #signupForm="ngForm" (ngSubmit)="onSignup(signupForm)">
+          <div class="form-group">
+            <input type="text" class="form-control" name="name" ngModel placeholder="Full Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" name="email" ngModel placeholder="Email Address" required>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" ngModel placeholder="Password" required>
+          </div>
+          <button type="submit" class="btn btn-create">Create Account</button>
+        </form>
+        <div class="login-link">
+          Already have an account? <a (click)="toggleForm()">Login here</a>
+        </div>
+      </div>
+
+
+      <ng-template #loginForm>
+        <div class="login-section">
+          <h2 class="login-title">Login</h2>
+          <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+            <div class="form-group">
+              <input type="email" class="form-control" name="email" ngModel placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" name="password" ngModel placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-login">Login</button>
+          </form>
+          <div class="signup-link">
+            Don't have an account? <a (click)="toggleForm()">Sign up here</a>
+          </div>
+        </div>
+      </ng-template>
+
+
+    </div>
+  </div>
+</div>

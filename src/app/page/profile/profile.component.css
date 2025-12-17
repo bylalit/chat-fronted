@@ -1,0 +1,78 @@
+.xyz {
+  background-color: #000;
+  background-image: url("/bgImage.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  color: white;
+  height: 100vh;
+}
+
+.container {
+  height: 100vh;
+}
+
+.chat-container {
+  width: 60%;
+  padding: 30px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.07);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ===== Profile Details Styling ===== */
+.profile-card {
+  background: rgba(20, 20, 35, 0.4);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-card h4 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.upload-img {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.upload-img i {
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.form-control,
+.form-control:focus {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  box-shadow: none;
+}
+
+textarea.form-control {
+  resize: none;
+  min-height: 80px;
+}
+
+.save-btn {
+  background: linear-gradient(90deg, #a855f7, #7c3aed);
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+  color: white;
+}
+
+.save-btn:hover {
+  opacity: 0.9;
+}

@@ -1,0 +1,183 @@
+.xyz {
+  background-color: #000;
+  background-image: url("/bgImage.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  color: white;
+  height: 100vh;
+}
+
+.chat-container {
+  height: 90vh;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.071);
+  /* border: 2px solid rgba(255, 255, 255, 0.616); */
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+
+.sidebar {
+  background: rgba(0, 0, 0, 0.768);
+  padding: 15px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.sidebar h5 i {
+  color: #a66bff;
+}
+
+.sidebar {
+  background: rgba(0, 0, 0, 0.768);
+  padding: 15px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  height: 100%; /* keep full height */
+  overflow-y: auto; /* enable vertical scroll */
+  overflow-x: hidden; /* hide horizontal scroll */
+}
+
+/* Optional: custom scrollbar for sidebar */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+}
+
+
+.menu-icon {
+  float: right;
+  position: relative;
+  cursor: pointer;
+  margin-top: 5px;
+  color: white;
+}
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 25px;
+  background: rgb(0, 0, 0);
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 120px;
+  z-index: 10;
+  padding: 10px;
+}
+.menu-dropdown a {
+  display: block;
+  padding: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+}
+.menu-dropdown button{
+  display: block;
+  padding: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: start;
+}
+.menu-dropdown a:hover {
+  background: #a66bff;
+}
+.menu-dropdown button:hover {
+  background: #a66bff;
+}
+.menu-icon:hover .menu-dropdown {
+  display: block;
+}
+
+.sidebar .search-box {
+  position: relative;
+}
+.sidebar .search-box input {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 20px;
+  padding-left: 35px;
+  border: none;
+}
+.sidebar .search-box input::placeholder {
+  color: white;
+  opacity: 0.7;
+  font-size: 14px;
+}
+.sidebar .search-box i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: white;
+}
+.sidebar .user {
+  display: flex;
+  align-items: center;
+  padding: 8px 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 6px;
+}
+.sidebar .user:hover {
+  background-color: rgba(166, 107, 255, 0.3);
+  transform: scale(1.02);
+  cursor: pointer;
+}
+.sidebar .user img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.status-online {
+  color: limegreen;
+  font-size: 12px;
+}
+.status-offline {
+  color: gray;
+  font-size: 12px;
+}
+.chat-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+}
+.chat-area::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(128, 0, 255, 0.5), transparent);
+  border-radius: 50%;
+}
+.chat-welcome {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.chat-welcome i {
+  font-size: 50px;
+  color: #a66bff;
+}
+.chat-welcome p {
+  font-size: 22px;
+  margin-top: 10px;
+}
