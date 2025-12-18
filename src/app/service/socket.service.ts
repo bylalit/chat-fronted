@@ -10,9 +10,7 @@ export class SocketService {
 
   constructor() {
     // this.socket = io('http://localhost:3000');
-    this.socket = io('https://chat-backend-4o9b.onrender.com'), {
-      transports: ['websocket'],
-    }
+    this.socket = io('https://chat-backend-4o9b.onrender.com');
   }
 
   sendMessage(msg: any) {
